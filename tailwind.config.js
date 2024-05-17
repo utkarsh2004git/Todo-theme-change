@@ -2,7 +2,10 @@
 module.exports = {
   content: ["./public/**/*.{html,js}"],
   theme: {
-    extend: {},
+    extend: {
+      backgroundColor: ['checked'],
+      translate: ['checked'],
+    },
   },
   plugins: [],
 }

@@ -1,0 +1,49 @@
+:root{
+    --bg-main:#ECF2FF;
+    --bg-primary:#18122B;
+}
+.text-ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /
+    
+}
+@keyframes deleteAnimation {
+    0% {
+        transform: scale(1);
+        background-color: red;
+    }
+    50% {
+        transform: scale(0.5);
+        opacity: 0.5;
+        background-color: red;
+
+    }
+    100% {
+        background-color: red;
+        transform: scale(0);
+        opacity: 0;
+    }
+}
+
+.delete-animation {
+    animation: deleteAnimation 1s ease forwards;
+}
+
+
+#checkbox:checked + .toggle-label .toggle-ball{
+    transform: translateX(2rem);
+}
+
+@media (min-width: 320px) and (max-width: 639px) {
+    #checkbox:checked + .toggle-label .toggle-ball{
+
+        transform: translateX(1.3rem);
+    }
+  }
+
+.toggle-ball{
+    transition: all .2s linear;
+
+}
