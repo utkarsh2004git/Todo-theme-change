@@ -1,17 +1,125 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>PRODIGY_WD_01</title>
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="style.css">
+    <style>
+        /* Hide the spinner buttons in Chrome, Safari, Edge, and Opera */
+        input[type=number]::-webkit-outer-spin-button,
+        input[type=number]::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+        /* Hide the spinner buttons in Firefox */
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+    </style>
 </head>
+
 <body>
-    <div>
-        <div>
-            <p class="text-blue ">Hello Tailwind</p>
+    <div class=" w-full py-6 bg-gradient-to-b from-gray-900 to-gray-800 sm:px-0 px-3">
+        <div class="nav p-6 ">
+            <nav
+                class="w-full bg-white  border-4 border-gray-900 px-10 py-4 rounded-3xl flex justify-around sm:justify-center sm:gap-28 items-center ">
+                <div class=" ">
+                    <img src="../images/account.svg" alt="act" class="w-14">
+                </div>
+                <div>
+                    <ul class="flex gap-2 sm:gap-7 font-bold text-xl ">
+                        <li
+                            class="hover:scale-110 hover:bg-gray-900 hover:text-white duration-200 py-2 px-2 sm:px-4 rounded-2xl">
+                            <a href="#add" class="">Add</a></li>
+                        <li
+                            class="hover:scale-110 hover:bg-gray-900 hover:text-white duration-200 py-2 px-2 sm:px-4 rounded-2xl">
+                            <a href="#view" class="">View</a></li>
+                    </ul>
+                </div>
+            </nav>
         </div>
+
+
+        <div class="Add mt-8  py-8 sm:w-full " id="add">
+            <div>
+                <div>
+                    <h2 class="text-white text-3xl border-b-4 border-gray-400 w-fit mx-auto ">Add Employee</h2>
+                </div>
+
+                <div class="sm:w-2/5 mx-auto ">
+                    <div class="mx-auto bg-white p-3 my-5 rounded-xl flex flex-col justify-center items-center py-6 ">
+                        <form class="flex flex-col" action="" autocomplete="off">
+                            <input type="text" 
+                                placeholder="Enter name"
+                                required
+                                id="name"        
+                                name="name"        
+                                class="px-6 py-3 my-3 bg-gray-700 w-fit focus:outline-none rounded-lg text-white">
+
+                            <input type="email"
+                                placeholder="Enter email"
+                                required
+                                id="email"
+                                name="email"
+                                class="px-6 py-3 my-3 bg-gray-700 w-fit focus:outline-none rounded-lg text-white">
+
+                            <input type="number" 
+                                placeholder="Enter age"
+                                required
+                                id="age"
+                                name="age"
+                                class="px-6 py-3 my-3 bg-gray-700 w-fit focus:outline-none rounded-lg text-white">
+
+                            <button
+                             type="submit"
+                             class="font-bold text-xl my-2 bg-blue-500 w-fit p-2 px-6 text-white rounded-xl mx-auto hover:scale-95 duration-300 hover:bg-blue-900"
+                             >
+                                Add
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <hr>
+
+    
+        <div id="view" class="sm:w-3/5 mx-auto mt-10 overflow-x-auto">
+            <div>
+                <h2 class="text-white text-3xl border-b-4 border-gray-400 w-fit mx-auto my-6 ">View Employees</h2>
+            </div>
+            <div class="bg-white p-6 rounded-xl shadow-lg">
+                <table class="min-w-full divide-y divide-gray-200">
+                    <thead class="bg-gray-50">
+                        <tr class="text-center">
+                            <th class="px-3 text-center sm:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
+                            <th class="px-3 text-center sm:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Email</th>
+                            <th class="px-3 text-center sm:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Age</th>
+                            <th class="px-3 text-center sm:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                        </tr>
+                    </thead>
+                    <tbody class="bg-white divide-y divide-gray-200">
+                        <tr >
+                            <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap">Utkarsh</td>
+                            <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap ">Utkarsh@123</td>
+                            <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap ">20</td>
+                            <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap ">
+                                <img class="w-6  mx-auto hover:scale-125 duration-200 cursor-pointer " src="../images/delete.svg" alt="dlt">
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    
+    
+
     </div>
 </body>
+
 </html>
