@@ -25,14 +25,13 @@
                 overflow: hidden;
                 text-overflow: ellipsis;
                 max-width: 100%; /* Adjust as needed */
-                width: 5rem;
             }
         </style>
 </head>
 
 <body>
     <div class=" w-full py-6 bg-gradient-to-b from-gray-900 to-gray-800 sm:px-0 px-3">
-        <div class="nav p-6 ">
+        <div class="nav  ">
             <nav
                 class="w-full bg-white  border-4 border-gray-900 px-10 py-4 rounded-3xl flex justify-around sm:justify-center sm:gap-28 items-center ">
                 <div class=" ">
@@ -99,11 +98,11 @@
 
     
         
-    <div id="view" class="sm:w-3/5 mx-auto mt-10 overflow-x-auto">
+    <div id="view" class="sm:w-3/5 mx-auto mt-10  ">
         <div>
             <h2 class="text-white text-3xl border-b-4 border-gray-400 w-fit mx-auto my-6 ">View Employees</h2>
         </div>
-        <div class="bg-white p-6 rounded-xl shadow-lg">
+        <div class="bg-white p-2 w-fit mx-auto sm:p-6 rounded-xl shadow-lg">
             <table class="min-w-full divide-y divide-gray-200">
                 <thead class="bg-gray-50">
                     <tr class="text-center">
@@ -113,18 +112,18 @@
                         <th class="px-3 text-center sm:px-6 py-3 text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                     </tr>
                 </thead>
-                <tbody class="bg-white divide-y divide-gray-200">
-                    <tr>
+                <tbody class="bg-white divide-y divide-gray-200 ">
+                    <tr >
                         <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap overflow-hidden max-w-xs">
-                            <div class="text-ellipsis">Utkarsh with a very long name</div>
+                            <div class="text-ellipsis w-[5.2rem] sm:w-full">Utkarsh</div>
                         </td>
                         <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap overflow-hidden max-w-xs">
-                            <div class="text-ellipsis">utkarshwithaverylongemailaddress@example.com</div>
+                            <div class="text-ellipsis w-[5.2rem] sm:w-full">utkarsh@example.com</div>
                         </td>
                         <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap">20</td>
-                        <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap">
-                            <button class="text-red-600 hover:text-red-900">Delete</button>
-                        </td>
+                        <td class="px-3 sm:px-6 text-center py-4 whitespace-nowrap ">
+                        <img class="w-6  mx-auto hover:scale-125 duration-200 cursor-pointer " src="../images/admin.svg" alt="dlt">
+                    </td>
                     </tr>
                 </tbody>
             </table>
@@ -132,12 +131,9 @@
     </div>
 
 
-
-
-    
-    
-
     </div>
+
+    <script src="./script.js"></script>
 </body>
 
 </html>
