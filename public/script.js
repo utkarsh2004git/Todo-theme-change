@@ -33,6 +33,7 @@ employeeForm.addEventListener('submit', function (event) {
     employeeForm.reset();
 });
 
+
 function addEmployeeToTable(employee) {
     const tableRow = document.createElement('tr');
 
@@ -42,7 +43,7 @@ function addEmployeeToTable(employee) {
     const actionCell = document.createElement('td');
 
     // Add Tailwind classes to elements
-    tableRow.classList.add('border-b', 'text-gray-700'); // For table row
+    tableRow.classList.add('border-b', 'text-gray-700',); // For table row
     nameCell.classList.add('px-3', 'sm:px-6', 'py-4'); // For name cell
     emailCell.classList.add('px-3', 'sm:px-6', 'py-4'); // For email cell
     ageCell.classList.add('px-3', 'sm:px-6', 'py-4'); // For age cell
@@ -58,7 +59,11 @@ function addEmployeeToTable(employee) {
     deleteButton.classList.add('w-6', 'mx-auto', 'cursor-pointer');
 
     deleteButton.addEventListener('click', function () {
-        tableRow.remove();
+        
+        tableRow.classList.add('delete-animation');
+        tableRow.addEventListener('animationend', function() {
+            tableRow.remove();
+        });
         // Remove the employee from localStorage
         removeEmployeeFromLocalStorage(employee);
     });
