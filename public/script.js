@@ -33,33 +33,49 @@ employeeForm.addEventListener('submit', function (event) {
     employeeForm.reset();
 });
 
-
 function addEmployeeToTable(employee) {
     const tableRow = document.createElement('tr');
 
+    // Define the cells
     const nameCell = document.createElement('td');
     const emailCell = document.createElement('td');
     const ageCell = document.createElement('td');
     const actionCell = document.createElement('td');
 
-    // Add Tailwind classes to elements
-    tableRow.classList.add('border-b', 'text-gray-700',); // For table row
-    nameCell.classList.add('px-3', 'sm:px-6', 'py-4'); // For name cell
-    emailCell.classList.add('px-3', 'sm:px-6', 'py-4'); // For email cell
-    ageCell.classList.add('px-3', 'sm:px-6', 'py-4'); // For age cell
-    actionCell.classList.add('px-3', 'sm:px-6', 'py-4', 'hover:scale-125', 'duration-200'); // For action cell
+    // Add Tailwind classes to table row and cells
+    tableRow.classList.add('border-b', 'text-gray-700');
+    nameCell.classList.add('px-3', 'sm:px-6', 'py-4', 'whitespace-nowrap', 'overflow-hidden', 'max-w-xs');
+    emailCell.classList.add('px-3', 'sm:px-6', 'py-4', 'whitespace-nowrap', 'overflow-hidden', 'max-w-xs');
+    ageCell.classList.add('px-3', 'sm:px-6', 'py-4', 'whitespace-nowrap');
+    actionCell.classList.add('px-3', 'sm:px-6', 'py-4', 'whitespace-nowrap', 'text-center');
 
-    nameCell.textContent = employee.name;
-    emailCell.textContent = employee.email;
-    ageCell.textContent = employee.age;
+    // Create divs inside the cells with text-ellipsis and width classes
+    const nameDiv = document.createElement('div');
+    const emailDiv = document.createElement('div');
+    const ageDiv = document.createElement('div');
 
+    nameDiv.classList.add('text-ellipsis', 'w-[5.2rem]', 'sm:w-full');
+    emailDiv.classList.add('text-ellipsis', 'w-[5.2rem]', 'sm:w-full');
+    ageDiv.classList.add('text-center');
+
+    // Set the text content of the divs
+    nameDiv.textContent = employee.name;
+    emailDiv.textContent = employee.email;
+    ageDiv.textContent = employee.age;
+
+    // Append divs to cells
+    nameCell.appendChild(nameDiv);
+    emailCell.appendChild(emailDiv);
+    ageCell.appendChild(ageDiv);
+
+    // Create the delete button for the action cell
     const deleteButton = document.createElement('img');
     deleteButton.src = '../images/delete.svg';
     deleteButton.alt = 'Delete';
-    deleteButton.classList.add('w-6', 'mx-auto', 'cursor-pointer');
+    deleteButton.classList.add('w-6', 'mx-auto', 'cursor-pointer', 'hover:scale-125', 'duration-200');
 
+    // Add delete functionality
     deleteButton.addEventListener('click', function () {
-        
         tableRow.classList.add('delete-animation');
         tableRow.addEventListener('animationend', function() {
             tableRow.remove();
@@ -70,13 +86,17 @@ function addEmployeeToTable(employee) {
 
     actionCell.appendChild(deleteButton);
 
+    // Append cells to the row
     tableRow.appendChild(nameCell);
     tableRow.appendChild(emailCell);
     tableRow.appendChild(ageCell);
     tableRow.appendChild(actionCell);
 
+    // Append the row to the table
+    const employeeTable = document.getElementById('employeeTable');
     employeeTable.appendChild(tableRow);
 }
+
 
 function saveEmployeesToLocalStorage(employee) {
     const employees = JSON.parse(localStorage.getItem('employees')) || [];
